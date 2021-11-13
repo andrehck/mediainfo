@@ -11,7 +11,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-type Mediainfo2 struct {
+type Mediainfo struct {
 	Media struct {
 		Ref   string `json:"@ref"`
 		Track []struct {
@@ -177,7 +177,7 @@ func VideoInfo(w http.ResponseWriter, r *http.Request) {
 
 	out, _ := execMedia.CombinedOutput()
 
-	var e Mediainfo2
+	var e Mediainfo
 
 	json.Unmarshal(out, &e)
 
