@@ -197,12 +197,6 @@ var mediainfo []MediaInfo
 
 func main() {
 
-	mediainfo = append(mediainfo, MediaInfo{
-		General: General{Id: "6120663", Complete_name: "ID de teste, feito um append", Format: "MPEG-4", Duration: "19 s 712 ms", File_size: "4.80 MiB", Overall_bit_rate: "2 042 kb/s", File_name: "auto-player_roku-exepress.mp4"},
-		Video: Video{Width: "640 pixels", Height: "352 pixels", Format: "AVC", Bit_rate: "1 788 kb/s", Duration: "19 s 659 ms", Format_Info: "Advanced Video Codec", Format_profile: "Baseline@L3", Format_settings__CABAC: false, Format_settings__ReFrames: "1 frame", Frame_rate: "29.970 (29970/1000) FPS",
-			Bit_depth: "8 bits", Scan_type: "Progressive", Minimum_frame_rate: "20.576 FPS", Maximum_frame_rate: "59.642 FPS"},
-		Audio: Audio{Format: "AAC LC", Format_Info: "Advanced Audio Codec Low Complexity", Duration: "19 s 712 ms", Bit_rate: "Constant", Channel_s_: "2 channels",
-			Frame_rate: "46.875 FPS (1024 SPF)", Sampling_rate: "48.0 kHz", Stream_size: "616 KiB (13%)"}})
 
 	router := mux.NewRouter()
 	router.HandleFunc("/", Redirect).Methods("GET")
@@ -223,7 +217,7 @@ func GetWorking(w http.ResponseWriter, r *http.Request) {
 
 func VideoInfo(w http.ResponseWriter, r *http.Request) {
 
-	execMedia := exec.Command("mediainfo", "--Output=JSON", "foto.jpeg")
+	execMedia := exec.Command("mediainfo", "--Output=JSON", "nomedoarquivo")
 
 	out, _ := execMedia.CombinedOutput()
 
