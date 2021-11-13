@@ -150,50 +150,6 @@ type Mediainfo2 struct {
 	} `json:"media"`
 }
 
-type MediaInfo struct {
-	General General `json:"general,omitempty"`
-	Video   Video   `json:"video,omitempty"`
-	Audio   Audio   `json:"audio,omitempty"`
-}
-
-type General struct {
-	Id               string `json:"id"`
-	Complete_name    string `json:"complete_name"`
-	Format           string `json:"format"`
-	Duration         string `json:"duration"`
-	File_size        string `json:"file_size"`
-	Overall_bit_rate string `json:"overall_bit_rate"`
-	File_name        string `json:"file_name"`
-}
-
-type Video struct {
-	Width                     string `json:"width"`
-	Height                    string `json:"height"`
-	Format                    string `json:"format"`
-	Bit_rate                  string `json:"bitrate"`
-	Duration                  string `json:"duration"`
-	Format_Info               string `json:"format_info"`
-	Format_profile            string `json:"format_profile"`
-	Format_settings__CABAC    bool   `json:"format_settings_cabac"`
-	Format_settings__ReFrames string `json:"format_settings__reframes"`
-	Frame_rate                string `json:"frame_rate"`
-	Bit_depth                 string `json:"bit_depth"`
-	Scan_type                 string `json:"scan_type"`
-	Minimum_frame_rate        string `json:"interlacement"`
-	Maximum_frame_rate        string `json:"writing_library"`
-}
-type Audio struct {
-	Format        string `json:"format"`
-	Format_Info   string `json:"format_Info"`
-	Duration      string `json:"duration"`
-	Bit_rate      string `json:"bitrate"`
-	Channel_s_    string `json:"channels"`
-	Frame_rate    string `json:"frame_rate"`
-	Sampling_rate string `json:"sampling_rate"`
-	Stream_size   string `json:"stream_size"`
-}
-
-var mediainfo []MediaInfo
 
 func main() {
 
